@@ -1,7 +1,7 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import TrackCard from '../containers/track-card';
-import { Layout, QueryResult } from '../components';
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+import TrackCard from "../containers/track-card";
+import { Layout, QueryResult } from "../components";
 
 /** TRACKS gql query to retrieve all tracks */
 const TRACKS = gql`
@@ -26,6 +26,14 @@ const TRACKS = gql`
  */
 const Tracks = () => {
   const { loading, error, data } = useQuery(TRACKS);
+
+  fetch("apiUrl/tracks").then((response) => {
+    // do something with our tracks JSON
+  });
+
+  // fetch(`apiUrl/author/${authorId}`).then((response) => {
+  //   // this is the author of our track
+  // })
 
   return (
     <Layout grid>
